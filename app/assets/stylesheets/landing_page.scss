@@ -158,7 +158,7 @@ hr.small {
 
 /* Header */
 
-.header {
+.landing_header {
     display: table;
     position: relative;
     width: 100%;
@@ -168,10 +168,6 @@ hr.small {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-.header p {
-    position: absolute;
-    bottom: 5px;
 }
 
 

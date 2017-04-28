@@ -45,7 +45,6 @@ ActiveAdmin.register Student do
     column :first_name
     column :last_name
     column :date_of_birth
-    column :address
     column :major
     column :email
     column :current_sign_in_at
