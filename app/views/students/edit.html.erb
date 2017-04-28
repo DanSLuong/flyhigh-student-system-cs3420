@@ -1,2 +1,61 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+<%= form_for(@student, :url => { :action => "update" }, html: { class: 'formtastic' } ) do |f| %>
+  <fieldset class="inputs">
+    <legend><span>Student Details</span></legend>
+    <ol>
+      <li class="input">
+        <%= f.label :first_name, "First Name" %><br />
+        <%= f.text_field :first_name  %>
+      </li>
+      <li class="input">
+        <%= f.label :last_name, "Last Name" %><br />
+        <%= f.text_field :last_name  %>
+      </li>
+      <li class="input">
+        <%= f.label :email, "Email" %><br />
+        <%= f.text_field :email  %>
+      </li>
+      <li class="input">
+        <%= f.label :address, "Address" %><br />
+        <%= f.text_area :address, cols: "80", rows: "8"  %>
+      </li>
+
+      <li class="input">
+        <%= f.label :date_of_birth, "DOB" %><br />
+        <%= f.date_select :date_of_birth, start_year: 100.years.ago.year, end_year: Date.today.year, default: Date.today  %>
+      </li>
+
+      <%# <li class="input"> %>
+      <%#   <%= f.label :phone, "Phone" %1><br /> %>
+      <%#   <%= f.text_field :phone  %1> %>
+      <%# </li> %>
+
+      <li class="input">
+        <%= f.label :major, "Major" %><br />
+        <%= f.text_field :major  %>
+      </li>
+      <li class="input">
+        <%= f.label :password, "Password" %><br />
+        <%= f.password_field :password, :autocomplete => "off"  %>
+      </li>
+      <li class="input">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation %>
+      </li>
+      <li class="input">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password %>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset class="actions">
+    <ol>
+      <li class="action inputs_action">
+        <%= f.submit %>
+      </li>
+      <li class="cancel">
+        <%= link_to "Cancel", :back %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
+
