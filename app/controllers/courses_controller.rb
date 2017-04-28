@@ -1,5 +1,5 @@
 class CoursesController < InheritedResources::Base
-  before_action :authenticate_admin_user!, except: [:show]
+  before_action :authenticate_student!, only: [:show]
 
   private
 

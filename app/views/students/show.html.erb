@@ -27,9 +27,9 @@
         <span class="action_item">
           <%= link_to "Edit Student Info", edit_student_path(@student) %>
         </span>
-        <%# <span class="action_item"> %>
-        <%#   <%= link_to "Calculate Gpa", calculate_gpa_student_path(@student), method: :put %1> %>
-        <%# </span> %>
+        <span class="action_item">
+          <%= link_to "Calculate Gpa", calculate_gpa_student_path(@student), method: :put %>
+        </span>
       </div>
     </div>
   </div>
@@ -54,16 +54,20 @@
                       <td><%= @student.last_name %></td>
                     </tr>
                     <tr class="row">
+                      <th> ADDRESS </th>
+                      <td><%= @student.address %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> PHONE </th>
+                      <td><%= @student.phone_number %></td>
+                    </tr>
+                    <tr class="row">
                       <th> EMAIL </th>
                       <td><%= @student.email %></td>
                     </tr>
                     <tr class="row">
                       <th> DATE OF BIRTH </th>
                       <td><%= @student.date_of_birth %></td>
-                    </tr>
-                    <tr class="row">
-                      <th> ADDRESS </th>
-                      <td><%= @student.address %></td>
                     </tr>
                     <tr class="row">
                       <th> MAJOR </th>
@@ -77,40 +81,40 @@
       </div>
     </div>
 
-    <%# <div id="sidebar"> %>
-    <%#   <div class="sidebar_section panel"> %>
-    <%#     <h3>Courses Enrolled</h3> %>
-    <%#     <div class="panel_contents"> %>
-    <%#       <table> %>
-    <%#         <thead> %>
-    <%#           <tr> %>
-    <%#             <th class="col">NUMBER</th> %>
-    <%#             <th class="col">TITLE</th> %>
-    <%#             <th class="col">GRADE</th> %>
-    <%#           </tr> %>
-    <%#         </thead> %>
-    <%#         <tbody> %>
-    <%#           <% @student.courses.each do |course| %1> %>
-    <%#             <tr class="<%= cycle('even', 'odd') %1>"> %>
-    <%#               <td><%= course.number %1></td> %>
-    <%#               <td><%= link_to course.title, course %1></td> %>
-    <%#               <td><%= @student.find_student_record(course).grade %1></td> %>
-    <%#             </tr> %>
-    <%#           <% end %1> %>
-    <%#         </tbody> %>
-    <%#       </table> %>
-    <%#     </div> %>
-    <%#   </div> %>
+    <div id="sidebar">
+      <div class="sidebar_section panel">
+        <h3>Courses Enrolled</h3>
+        <div class="panel_contents">
+          <table>
+            <thead>
+              <tr>
+                <th class="col">NUMBER</th>
+                <th class="col">TITLE</th>
+                <th class="col">GRADE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @student.courses.each do |course| %>
+                <tr class="<%= cycle('even', 'odd') %>">
+                  <td><%= course.number %></td>
+                  <td><%= link_to course.title, course %></td>
+                  <td><%= @student.find_student_record(course).grade %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
 
-    <%#   <div class="sidebar_section panel"> %>
-    <%#     <h3>Semester Gpa</h3> %>
-    <%#     <div class="panel_contents"> %>
-    <%#       <%= @student.show_gpa %1> %>
-    <%#     </div> %>
-    <%#   </div> %>
-    <%# </div> %>
-  <%# </div> <!-- end active_admin contents --> %>
+      <div class="sidebar_section panel">
+        <h3>Semester Gpa</h3>
+        <div class="panel_contents">
+          <%= @student.show_gpa %>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end active_admin contents -->
 
   <div id="footer" class="footer">
     <p>

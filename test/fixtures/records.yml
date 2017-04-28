@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  course: one
+  quizzes: 1
+  homeworks: 1
+  first_exam: 1
+  second_exam: 1
+  final: 1
+  grade: MyString
+
+two:
+  student: two
+  course: two
+  quizzes: 1
+  homeworks: 1
+  first_exam: 1
+  second_exam: 1
+  final: 1
+  grade: MyString

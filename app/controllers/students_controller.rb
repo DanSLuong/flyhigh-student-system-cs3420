@@ -20,10 +20,10 @@ class StudentsController < ApplicationController
     end
   end
 
-  # def calculate_gpa
-  #   current_student.calculate_gpa
-  #   redirect_to student_path(current_student)
-  # end
+  def calculate_gpa
+    current_student.calculate_gpa
+    redirect_to student_path(current_student)
+  end
 
   private
   def student_params

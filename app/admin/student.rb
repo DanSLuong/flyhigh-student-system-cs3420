@@ -3,11 +3,11 @@ ActiveAdmin.register Student do
   permit_params :first_name, :last_name, :email, :password, :password_confirmation
 
   # eager load in students controller with associations
-  # controller do
-  #   def scoped_collection
-  #     super.includes courses: :records
-  #   end
-  # end
+  controller do
+    def scoped_collection
+      super.includes courses: :records
+    end
+  end
 
   scope :all
   scope :undeclared_major
@@ -35,6 +35,7 @@ ActiveAdmin.register Student do
         f.input :password
         f.input :password_confirmation
       end
+      input :major
     end
     actions
   end
@@ -64,39 +65,38 @@ ActiveAdmin.register Student do
         row :email
         row :phone_number
         row :major
-        row :gpa
       end
     end
     active_admin_comments
   end
 
-  # sidebar "Courses Enrolled", only: :show do
-  #     table_for student.courses do
-  #       column :number
-  #       column :title do |course|
-  #         link_to course.title, admin_course_path(course)
-  #       end
-  #       column "Grade" do |course|
-  #         grade = student.find_student_record(course).grade
-  #         grade.present? ? grade : "pending"
-  #       end
-  #     end
-  # end
+  sidebar "Courses Enrolled", only: :show do
+      table_for student.courses do
+        column :number
+        column :title do |course|
+          link_to course.title, admin_course_path(course)
+        end
+        column "Grade" do |course|
+          grade = student.find_student_record(course).grade
+          grade.present? ? grade : "pending"
+        end
+      end
+  end
 
-  # sidebar "semester gpa", only: :show do
-  #   student.show_gpa
-  # end
+  sidebar "semester gpa", only: :show do
+    student.show_gpa
+  end
 
-  # action_item :calculate_gpa, only: :show do
-  #   link_to "Calculate GPA", calculate_gpa_admin_student_path(student), method: :put
-  # end
+  action_item :calculate_gpa, only: :show do
+    link_to "Calculate GPA", calculate_gpa_admin_student_path(student), method: :put
+  end
 
 
-  # member_action :calculate_gpa, method: :put do
-  #   student = Student.find(params[:id])
-  #   student.calculate_gpa
-  #   redirect_to admin_student_path(student)
-  # end
+  member_action :calculate_gpa, method: :put do
+    student = Student.find(params[:id])
+    student.calculate_gpa
+    redirect_to admin_student_path(student)
+  end
 
 
 end
