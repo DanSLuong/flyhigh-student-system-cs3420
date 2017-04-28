@@ -39,6 +39,11 @@ gem 'bootstrap-sass'
 # gem 'bootstrap-will_paginate'
 gem 'font-awesome-rails'
 
+gem 'devise'
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'inherited_resources', '~> 1.7'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
