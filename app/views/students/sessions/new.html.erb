@@ -1,0 +1,47 @@
+<div id="wrapper">
+  <div id="content_wrapper" class="logged_out">
+    <div class="flash flash_alert logged_out">You need to sign in before continuing.</div>
+    <div id="active_admin_content">
+      <div id="login">
+        <h2 class="logged_out">Flyhigh Student Login</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'formtastic' }) do |f| %>
+
+          <fieldset class="inputs logged_out">
+            <ol>
+              <li class="input">
+                <%= f.label :email, class: "label" %>
+                <%= f.email_field :email, autofocus: true %>
+              </li>
+              <li class="input">
+                <%= f.label :password, class: "label" %>
+                <%= f.password_field :password, autocomplete: "off" %>
+              </li>
+              <li class="input">
+                <% if devise_mapping.rememberable? -%>
+                  <div class="input">
+                    <%= f.label :remember_me %>
+                    <%= f.check_box :remember_me %>
+                  </div>
+                <% end -%>
+              </li>
+            </ol>
+          </fieldset>
+
+          <fieldset class="actions">
+            <ol>
+              <li class="action input_action">
+                <%= f.submit "Log in" %>
+              </li>
+              <li class="cancel">
+                <%= link_to "Cancel", root_path %>
+              </li>
+            </ol>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

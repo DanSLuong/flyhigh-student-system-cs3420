@@ -64,7 +64,6 @@ h2.logged_out {
 }
 
 .input .label {
-  color: #5E6469;
-  font-size: 1em;
+  color: #5E6469
 }
 
