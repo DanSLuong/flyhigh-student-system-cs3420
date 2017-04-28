@@ -1,0 +1,79 @@
+<div id="wrapper">
+  <div id="header" class="header">
+    <h1 id="site_title" class="site_title">
+      <%= link_to "Flyhigh Student System", root_path %>
+    </h1>
+
+  </div>
+
+  <div id="title_bar" class="title_bar">
+    <div id="titlebar_left">
+      <span class="breadcrum">
+        <span class="breadcrum_sep"></span>
+      </span>
+      <h2 class="page_title">
+        <%= "#{@course.number} #{@course.title}" %>
+      </h2>
+    </div>
+
+  </div>
+
+
+  <div id="active_admin_content" class="without_sidebar">
+    <div id="main_content_wrapper">
+      <div id="main_content">
+        <div class="panel">
+          <h3>Student Details</h3>
+          <div class="panel_contents">
+            <div class="attributes_table">
+              <table>
+                <tbody>
+                    <tr class="row">
+                      <th> SUBJECT </th>
+                      <td><%= @course.subject %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> NUMBER </th>
+                      <td><%= @course.number %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> CREDIT </th>
+                      <td><%= @course.credit %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> TITLE </th>
+                      <td><%= @course.title %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> DESCRIPTION </th>
+                      <td><%= @course.description %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> TIME </th>
+                      <td><%= @course.time %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> DAYS </th>
+                      <td><%= @course.days %></td>
+                    </tr>
+                    <tr class="row">
+                      <th> ROOM </th>
+                      <td><%= @course.room %></td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- end active_admin contents -->
+
+  <div id="footer" class="footer">
+    <p>
+    coded with <%= fa_icon 'heart' %> by <a href="http://squoc.me">Quoc Nguyen</a>
+    </p>
+  </div>
+</div>
+

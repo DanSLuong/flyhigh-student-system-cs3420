@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  
+  resources :courses, only: [:show]
+
   devise_for :students, controllers: {
     sessions: 'students/sessions',
   }
