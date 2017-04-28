@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Flyhigh Student System Project
 
-Things you may want to cover:
+### Description
 
-* Ruby version
+This is the project I made for my CS 3420 Intro to Software Engineer class.
+Students are required to degisn and implement a simple student system applying the knowledge
+learnt in class.
 
-* System dependencies
+### Technologies Used
 
-* Configuration
+- Front end by Bootstrap Framework
+- Backend by Ruby on Rails
+- Database by PostgreSQL
+- Deployed to Heroku cloud server
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
